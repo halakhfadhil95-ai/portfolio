@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HALAH FADHIL | Portfolio</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <meta name="description" content="Electrical & Electronics Engineer | Embedded Systems & IoT | IT, Web & Systems | Digital & Business Systems" />
+
+  <style>
+    .glass { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    dialog::backdrop { background: rgba(0,0,0,.55); }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100">
+  <!-- Background glow -->
+  <div class="pointer-events-none fixed inset-0 opacity-40">
+    <div class="absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-indigo-500 blur-[140px]"></div>
+    <div class="absolute top-40 right-[-120px] h-[420px] w-[420px] rounded-full bg-cyan-400 blur-[140px]"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/60 glass">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <a href="#home" class="flex items-center gap-2 font-semibold">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10">
+          <i data-lucide="sparkles" class="h-5 w-5"></i>
+        </span>
+        <span>HALAH FADHIL</span>
+      </a>
+
+      <div class="hidden items-center gap-6 text-sm md:flex">
+        <a class="hover:text-white/90 text-white/70" href="#about">About</a>
+        <a class="hover:text-white/90 text-white/70" href="#skills">Skills</a>
+        <a class="hover:text-white/90 text-white/70" href="#projects">Projects</a>
+        <a class="hover:text-white/90 text-white/70" href="#experience">Education & Experience</a>
+        <a class="hover:text-white/90 text-white/70" href="#languages">Languages</a>
+        <a class="hover:text-white/90 text-white/70" href="#contact">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button id="themeBtn"
+          class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm hover:bg-white/10">
+          <i data-lucide="moon" class="h-4 w-4"></i>
+          <span class="hidden sm:inline">Theme</span>
+        </button>
+
+        <a href="#contact"
+          class="inline-flex items-center gap-2 rounded-xl bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-200">
+          <i data-lucide="send" class="h-4 w-4"></i>
+          Contact
+        </a>
+
+        <button id="menuBtn"
+          class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 p-2 hover:bg-white/10"
+          aria-label="Menu">
+          <i data-lucide="menu" class="h-5 w-5"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-slate-950/70 glass md:hidden">
+      <div class="mx-auto max-w-6xl px-4 py-3 grid gap-2 text-sm">
+        <a class="rounded-lg px-3 py-2 hover:bg-white/5 text-white/80" href="#about">About</a>
+        <a class="rounded-lg px-3 py-2 hover:bg-white/5 text-white/80" href="#skills">Skills</a>
+        <a class="rounded-lg px-3 py-2 hover:bg-white/5 text-white/80" href="#projects">Projects</a>
+        <a class="rounded-lg px-3 py-2 hover:bg-white/5 text-white/80" href="#experience">Education & Experience</a>
+        <a class="rounded-lg px-3 py-2 hover:bg-white/5 text-white/80" href="#languages">Languages</a>
+        <a class="rounded-lg px-3 py-2 hover:bg-white/5 text-white/80" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="home" class="relative mx-auto max-w-6xl px-4">
+    <!-- Hero -->
+    <section class="pt-14 pb-10 md:pt-20 md:pb-14">
+      <div class="grid gap-8 md:grid-cols-12 md:items-center">
+        <div class="md:col-span-7">
+          <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
+            <i data-lucide="cpu" class="h-4 w-4"></i>
+            Electrical & Electronics Engineer
+          </p>
+
+          <h1 class="mt-4 text-3xl font-extrabold tracking-tight md:text-5xl">
+            I build practical systems across
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-indigo-400">
+              IoT, automation, web, and digital platforms
+            </span>
+          </h1>
+
+          <p class="mt-4 text-white/70 leading-relaxed">
+            MSc in Electrical & Electronics Engineering with hands-on experience in smart home automation,
+            IoT-based intelligent irrigation, web systems, and digital marketing & analytics.
+          </p>
+
+          <div class="mt-6 flex flex-wrap items-center gap-3">
+            <a id="cvLink" href="./CV.pdf" target="_blank"
+              class="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-200">
+              <i data-lucide="download" class="h-4 w-4"></i>
+              Download CV (PDF)
+            </a>
+
+            <a href="#projects"
+              class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold hover:bg-white/10">
+              <i data-lucide="layers" class="h-4 w-4"></i>
+              View Projects
+            </a>
+
+            <a id="githubTop" href="#" target="_blank"
+              class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/0 px-4 py-2 text-sm font-semibold hover:bg-white/10 text-white/80">
+              <i data-lucide="github" class="h-4 w-4"></i>
+              GitHub
+            </a>
+
+            <a id="linkedinTop" href="#" target="_blank"
+              class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/0 px-4 py-2 text-sm font-semibold hover:bg-white/10 text-white/80">
+              <i data-lucide="linkedin" class="h-4 w-4"></i>
+              LinkedIn
+            </a>
+          </div>
+
+          <!-- Highlights -->
+          <div class="mt-8 grid gap-3 sm:grid-cols-3">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="text-xs text-white/60">Focus</p>
+              <p class="mt-1 font-semibold">Embedded & IoT</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="text-xs text-white/60">Also</p>
+              <p class="mt-1 font-semibold">Web & Systems</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="text-xs text-white/60">Strength</p>
+              <p class="mt-1 font-semibold">Digital Platforms</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile card -->
+        <div class="md:col-span-5">
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <div class="flex items-center gap-4">
+              <div class="h-14 w-14 rounded-2xl bg-gradient-to-br from-cyan-300 to-indigo-500"></div>
+              <div>
+                <p class="text-sm text-white/70">Hello, I’m</p>
+                <p class="text-xl font-bold">HALAH FADHIL</p>
+                <p class="text-sm text-white/60">Electrical & Electronics Engineer</p>
+              </div>
+            </div>
+
+            <div class="mt-5 grid gap-3 text-sm">
+              <div class="flex items-center gap-2 text-white/80">
+                <i data-lucide="map-pin" class="h-4 w-4"></i>
+                <span>Kirkuk – Iraq</span>
+              </div>
+              <div class="flex items-center gap-2 text-white/80">
+                <i data-lucide="mail" class="h-4 w-4"></i>
+                <a class="hover:underline" href="mailto:halakhfadhil95@gmail.com">halakhfadhil95@gmail.com</a>
+              </div>
+              <div class="flex items-center gap-2 text-white/80">
+                <i data-lucide="phone" class="h-4 w-4"></i>
+                <a class="hover:underline" href="tel:+9647764883990">07764883990</a>
+              </div>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">ESP32</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">Raspberry Pi</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">IoT Automation</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">SEO</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">Analytics</span>
+            </div>
+
+            <div class="mt-6">
+              <a href="#contact"
+                class="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-300 to-indigo-400 px-4 py-2 text-sm font-semibold text-slate-900 hover:opacity-90">
+                <i data-lucide="message-circle" class="h-4 w-4"></i>
+                Contact me
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-10 md:py-14">
+      <h2 class="text-2xl font-bold">About</h2>
+      <p class="mt-2 text-white/70 max-w-3xl">
+        MSc in Electrical & Electronics Engineering (Necmettin Erbakan University, Turkey, 2022–2024) and BSc in Electrical & Electronics Engineering
+        (University of Tikrit, Iraq, 2012–2016). My work spans embedded systems, IoT automation, web systems, and digital marketing platforms.
+      </p>
+
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <div class="flex items-center gap-2 font-semibold">
+            <i data-lucide="microchip" class="h-5 w-5"></i> Embedded & IoT
+          </div>
+          <p class="mt-2 text-sm text-white/70">Sensor integration, data acquisition, automated control, and optimization.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <div class="flex items-center gap-2 font-semibold">
+            <i data-lucide="globe" class="h-5 w-5"></i> Web Systems
+          </div>
+          <p class="mt-2 text-sm text-white/70">Website/platform management and connecting marketing tools with technical systems.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <div class="flex items-center gap-2 font-semibold">
+            <i data-lucide="line-chart" class="h-5 w-5"></i> Digital Marketing
+          </div>
+          <p class="mt-2 text-sm text-white/70">SEO fundamentals, campaign optimization, traffic & conversion analysis.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-10 md:py-14">
+      <h2 class="text-2xl font-bold">Skills</h2>
+      <p class="mt-2 text-white/70 max-w-3xl">
+        Core areas based on my experience: Electrical & Automation, Embedded Systems & IoT, IT/Web/Systems, Digital & Business Systems.
+      </p>
+
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="font-semibold">Electrical & Automation</p>
+          <ul class="mt-3 space-y-2 text-sm text-white/70">
+            <li>• System design & implementation</li>
+            <li>• Energy efficiency analysis & optimization</li>
+            <li>• Automated control concepts</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="font-semibold">Embedded Systems & IoT</p>
+          <ul class="mt-3 space-y-2 text-sm text-white/70">
+            <li>• ESP32, Raspberry Pi</li>
+            <li>• Sensor integration, data acquisition</li>
+            <li>• Smart home & intelligent irrigation systems</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="font-semibold">IT, Web & Systems</p>
+          <ul class="mt-3 space-y-2 text-sm text-white/70">
+            <li>• Website & digital platform management</li>
+            <li>• Tools integration with technical systems</li>
+            <li>• Backup, continuity, system reliability</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="font-semibold">Digital & Business Systems</p>
+          <ul class="mt-3 space-y-2 text-sm text-white/70">
+            <li>• Digital marketing strategy execution</li>
+            <li>• SEO fundamentals & campaign optimization</li>
+            <li>• Traffic, behavior & conversion analysis</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-10 md:py-14">
+      <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h2 class="text-2xl font-bold">Projects</h2>
+          <p class="mt-2 text-white/70 max-w-3xl">
+            Click a card to view details, role, tech stack, and links.
+          </p>
+        </div>
+
+        <div class="flex gap-2">
+          <input id="projectSearch"
+            class="w-full md:w-72 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm outline-none placeholder:text-white/40"
+            placeholder="Search (IoT, smart home, SEO...)" />
+          <select id="projectFilter"
+            class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm outline-none">
+            <option value="all">All</option>
+            <option value="iot">IoT</option>
+            <option value="web">Web</option>
+            <option value="digital">Digital</option>
+            <option value="systems">Systems</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="projectGrid" class="mt-6 grid gap-4 md:grid-cols-2"></div>
+    </section>
+
+    <!-- Education & Experience -->
+    <section id="experience" class="py-10 md:py-14">
+      <h2 class="text-2xl font-bold">Education & Experience</h2>
+
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-sm text-white/60">Education</p>
+          <div class="mt-2 space-y-3 text-sm text-white/70">
+            <div>
+              <p class="font-semibold text-white/90">MSc in Electrical & Electronics Engineering</p>
+              <p>Necmettin Erbakan University – Turkey (2022–2024)</p>
+            </div>
+            <div>
+              <p class="font-semibold text-white/90">BSc in Electrical & Electronics Engineering</p>
+              <p>University of Tikrit – Iraq (2012–2016)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-sm text-white/60">Experience Timeline</p>
+          <div class="mt-2 space-y-4 text-sm text-white/70">
+            <div>
+              <p class="font-semibold text-white/90">2024 – Today • Digital Marketing & Web Systems</p>
+              <ul class="mt-2 space-y-1">
+                <li>• Digital marketing strategy execution</li>
+                <li>• Website & digital platform management</li>
+                <li>• SEO fundamentals & digital campaign optimization</li>
+                <li>• Traffic, behavior & conversion analysis</li>
+                <li>• Integrating marketing tools with technical systems</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold text-white/90">2022 – 2024 • Academic & Industrial Projects</p>
+              <ul class="mt-2 space-y-1">
+                <li>• Smart home automation systems</li>
+                <li>• IoT-based intelligent irrigation systems</li>
+                <li>• Sensor integration, data acquisition, automated control</li>
+                <li>• Energy efficiency analysis & optimization</li>
+                <li>• Platforms: ESP32, Raspberry Pi</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-semibold text-white/90">2020 – 2022 • System & Software Administrator</p>
+              <p class="mt-1">Elimkon – Electronik</p>
+              <ul class="mt-2 space-y-1">
+                <li>• Corporate accounting software administration</li>
+                <li>• Access control, authorization, data integrity</li>
+                <li>• Backup, continuity, reliability management</li>
+                <li>• Technical support for reporting processes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section id="languages" class="py-10 md:py-14">
+      <h2 class="text-2xl font-bold">Languages</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-5">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs text-white/60">German</p>
+          <p class="mt-1 font-semibold">B1</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs text-white/60">English</p>
+          <p class="mt-1 font-semibold">C1</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs text-white/60">Kurdish</p>
+          <p class="mt-1 font-semibold">C1</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs text-white/60">Turkish</p>
+          <p class="mt-1 font-semibold">C2</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs text-white/60">Arabic</p>
+          <p class="mt-1 font-semibold">Mother Language</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-10 md:py-14">
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
+        <h2 class="text-2xl font-bold">Contact</h2>
+        <p class="mt-2 text-white/70 max-w-2xl">
+          For collaboration, projects, or opportunities — feel free to reach out.
+        </p>
+
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          <a class="rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10" href="mailto:halakhfadhil95@gmail.com">
+            <div class="flex items-center gap-2 font-semibold">
+              <i data-lucide="mail" class="h-5 w-5"></i> Email
+            </div>
+            <p class="mt-2 text-sm text-white/70">halakhfadhil95@gmail.com</p>
+          </a>
+
+          <a class="rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10" href="tel:+9647764883990">
+            <div class="flex items-center gap-2 font-semibold">
+              <i data-lucide="phone" class="h-5 w-5"></i> Phone
+            </div>
+            <p class="mt-2 text-sm text-white/70">07764883990</p>
+          </a>
+
+          <a class="rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/10" href="#projects">
+            <div class="flex items-center gap-2 font-semibold">
+              <i data-lucide="briefcase" class="h-5 w-5"></i> Portfolio
+            </div>
+            <p class="mt-2 text-sm text-white/70">Projects & experience</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-10 text-center text-xs text-white/50">
+      © <span id="year"></span> HALAH FADHIL • Built with HTML + Tailwind
+    </footer>
+  </main>
+
+  <!-- Project Modal -->
+  <dialog id="projectModal" class="w-[min(720px,92vw)] rounded-2xl border border-white/10 bg-slate-950 text-slate-100">
+    <div class="border-b border-white/10 p-5 flex items-start justify-between gap-4">
+      <div>
+        <p id="mBadge" class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70"></p>
+        <h3 id="mTitle" class="mt-2 text-xl font-bold"></h3>
+        <p id="mSubtitle" class="mt-2 text-sm text-white/70"></p>
+      </div>
+      <button id="modalClose" class="rounded-xl border border-white/10 bg-white/5 p-2 hover:bg-white/10" aria-label="Close">
+        <i data-lucide="x" class="h-5 w-5"></i>
+      </button>
+    </div>
+
+    <div class="p-5 grid gap-4">
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+        <p class="text-sm font-semibold">Summary</p>
+        <p id="mDesc" class="mt-2 text-sm text-white/70"></p>
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+          <p class="text-sm font-semibold">Technologies</p>
+          <div id="mTech" class="mt-2 flex flex-wrap gap-2"></div>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+          <p class="text-sm font-semibold">Role</p>
+          <p id="mRole" class="mt-2 text-sm text-white/70"></p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <a id="mGithub" target="_blank"
+          class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold hover:bg-white/10">
+          <i data-lucide="github" class="h-4 w-4"></i> GitHub
+        </a>
+        <a id="mDemo" target="_blank"
+          class="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-200">
+          <i data-lucide="external-link" class="h-4 w-4"></i> Demo
+        </a>
+        <a id="mPdf" target="_blank"
+          class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/0 px-4 py-2 text-sm font-semibold hover:bg-white/10 text-white/80">
+          <i data-lucide="file-text" class="h-4 w-4"></i> PDF
+        </a>
+      </div>
+
+      <form method="dialog" class="pt-2">
+        <button class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-sm hover:bg-white/10">
+          Close
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <script>
+    // ===== SETTINGS =====
+    const SETTINGS = {
+      name: "HALAH FADHIL",
+      title: "Electrical & Electronics Engineer",
+      email: "halakhfadhil95@gmail.com",
+      phoneDisplay: "07764883990",
+      phoneTel: "+9647764883990",
+      location: "Kirkuk – Iraq",
+      github: "#",      // add your GitHub
+      linkedin: "#",    // add your LinkedIn
+      cvPdfPath: "./CV.pdf"
+    };
+
+    // ===== PROJECTS (CV’ye göre hazırlanmış; linkleri sen doldur) =====
+    const PROJECTS = [
+      {
+        id: "smart-home-automation",
+        category: "iot",
+        badge: "IoT",
+        title: "Smart Home Automation System",
+        subtitle: "Design & implementation of smart home automation",
+        desc: "Designed and implemented smart home automation workflows with sensor integration and automated control logic.",
+        tech: ["ESP32", "Raspberry Pi", "Sensors", "Automation", "Data Acquisition"],
+        role: "System design, sensor integration, control logic, testing & optimization.",
+        github: "#",
+        demo: "#",
+        pdf: "#"
+      },
+      {
+        id: "intelligent-irrigation",
+        category: "iot",
+        badge: "IoT",
+        title: "IoT-based Intelligent Irrigation System",
+        subtitle: "Sensor integration, automated control, energy efficiency",
+        desc: "Developed an IoT-based irrigation solution including data acquisition, automated control, and energy efficiency analysis.",
+        tech: ["ESP32", "Raspberry Pi", "Sensors", "Automation", "Energy Efficiency"],
+        role: "Implementation, sensor/data pipeline, automation logic, optimization.",
+        github: "#",
+        demo: "#",
+        pdf: "#"
+      },
+      {
+        id: "digital-marketing-web-systems",
+        category: "digital",
+        badge: "Digital",
+        title: "Digital Marketing & Web Systems",
+        subtitle: "SEO, campaigns, analytics, platform management",
+        desc: "Executed digital marketing strategy, managed websites/platforms, optimized campaigns with SEO fundamentals and performance analytics.",
+        tech: ["SEO", "Campaign Optimization", "Analytics", "Web Platforms", "Tool Integration"],
+        role: "Strategy execution, platform management, KPI tracking, conversion analysis.",
+        github: "#",
+        demo: "#",
+        pdf: "#"
+      },
+      {
+        id: "accounting-systems-admin",
+        category: "systems",
+        badge: "Systems",
+        title: "Corporate Accounting Systems Administration",
+        subtitle: "Access control, backups, reliability, reporting support",
+        desc: "Administered corporate accounting software: access control, authorization, data integrity, backups and continuity planning.",
+        tech: ["System Administration", "Access Control", "Backups", "Data Integrity", "Reporting Support"],
+        role: "Administration, reliability management, user support, process continuity.",
+        github: "#",
+        demo: "#",
+        pdf: "#"
+      }
+    ];
+
+    // ----- DOM HELPERS -----
+    const $ = (s) => document.querySelector(s);
+    const yearEl = $("#year");
+    const menuBtn = $("#menuBtn");
+    const mobileMenu = $("#mobileMenu");
+    const themeBtn = $("#themeBtn");
+    const projectGrid = $("#projectGrid");
+    const projectSearch = $("#projectSearch");
+    const projectFilter = $("#projectFilter");
+    const modal = $("#projectModal");
+
+    // Modal elements
+    const mBadge = $("#mBadge");
+    const mTitle = $("#mTitle");
+    const mSubtitle = $("#mSubtitle");
+    const mDesc = $("#mDesc");
+    const mTech = $("#mTech");
+    const mRole = $("#mRole");
+    const mGithub = $("#mGithub");
+    const mDemo = $("#mDemo");
+    const mPdf = $("#mPdf");
+    const modalClose = $("#modalClose");
+
+    // ----- INIT -----
+    yearEl.textContent = new Date().getFullYear();
+
+    // Apply settings
+    $("#cvLink").href = SETTINGS.cvPdfPath;
+    $("#githubTop").href = SETTINGS.github;
+    $("#linkedinTop").href = SETTINGS.linkedin;
+
+    // Mobile menu
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+    mobileMenu.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+    });
+
+    // Theme toggle
+    let isDark = true;
+    themeBtn.addEventListener("click", () => {
+      isDark = !isDark;
+      document.body.className = isDark ? "bg-slate-950 text-slate-100" : "bg-slate-50 text-slate-900";
+      document.querySelectorAll(".glass").forEach(el => {
+        el.classList.toggle("bg-slate-950/60", isDark);
+        el.classList.toggle("bg-white/70", !isDark);
+      });
+    });
+
+    // Render projects
+    function projectCard(p) {
+      const catColor =
+        p.category === "iot" ? "from-emerald-300 to-cyan-300" :
+        p.category === "web" ? "from-fuchsia-300 to-indigo-300" :
+        p.category === "digital" ? "from-amber-300 to-rose-300" :
+        "from-sky-300 to-violet-300";
+
+      return `
+        <button data-id="${p.id}" class="group text-left rounded-3xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition">
+          <div class="flex items-start justify-between gap-3">
+            <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">${p.badge}</span>
+            <span class="h-10 w-10 rounded-2xl bg-gradient-to-br ${catColor} opacity-90"></span>
+          </div>
+
+          <h3 class="mt-4 text-lg font-bold group-hover:underline">${p.title}</h3>
+          <p class="mt-2 text-sm text-white/70">${p.subtitle}</p>
+
+          <div class="mt-4 flex flex-wrap gap-2">
+            ${p.tech.slice(0,4).map(t => `<span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/60">${t}</span>`).join("")}
+            ${p.tech.length > 4 ? `<span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/60">+${p.tech.length-4}</span>` : ""}
+          </div>
+
+          <div class="mt-5 flex items-center gap-2 text-sm text-white/70">
+            <i data-lucide="mouse-pointer-click" class="h-4 w-4"></i>
+            <span>Click for details</span>
+          </div>
+        </button>
+      `;
+    }
+
+    function renderProjects() {
+      const q = projectSearch.value.trim().toLowerCase();
+      const f = projectFilter.value;
+
+      const filtered = PROJECTS.filter(p => {
+        const inFilter = (f === "all") || (p.category === f);
+        const inSearch =
+          !q ||
+          p.title.toLowerCase().includes(q) ||
+          p.subtitle.toLowerCase().includes(q) ||
+          p.desc.toLowerCase().includes(q) ||
+          p.tech.join(" ").toLowerCase().includes(q);
+        return inFilter && inSearch;
+      });
+
+      projectGrid.innerHTML = filtered.map(projectCard).join("") || `
+        <div class="md:col-span-2 rounded-2xl border border-white/10 bg-white/5 p-6 text-white/70">
+          No results found. Try a different search.
+        </div>
+      `;
+
+      lucide.createIcons();
+
+      projectGrid.querySelectorAll("button[data-id]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-id");
+          const p = PROJECTS.find(x => x.id === id);
+          openModal(p);
+        });
+      });
+    }
+
+    function openModal(p) {
+      mBadge.textContent = p.badge;
+      mTitle.textContent = p.title;
+      mSubtitle.textContent = p.subtitle;
+      mDesc.textContent = p.desc;
+      mRole.textContent = p.role;
+
+      mTech.innerHTML = p.tech.map(t =>
+        `<span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">${t}</span>`
+      ).join("");
+
+      const setLink = (el, url) => {
+        if (url && url !== "#") {
+          el.href = url;
+          el.classList.remove("hidden");
+        } else {
+          el.href = "#";
+          el.classList.add("hidden");
+        }
+      };
+
+      setLink(mGithub, p.github);
+      setLink(mDemo, p.demo);
+      setLink(mPdf, p.pdf);
+
+      modal.showModal();
+      lucide.createIcons();
+    }
+
+    modalClose.addEventListener("click", () => modal.close());
+    projectSearch.addEventListener("input", renderProjects);
+    projectFilter.addEventListener("change", renderProjects);
+
+    renderProjects();
+    lucide.createIcons();
+  </script>
+</body>
+</html>
