@@ -1,0 +1,1094 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HALAH FADHIL | Portfolio</title>
+  <meta name="description" content="Electrical and Electronics Engineer focused on embedded systems, IoT automation, web systems, and digital platforms." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #24cb7b;
+      --bg-deep: #1a9a60;
+      --surface: #f7f8f6;
+      --surface-strong: #ffffff;
+      --text: #0b1210;
+      --muted: #33584a;
+      --accent: #0f7a4a;
+      --accent-soft: #c5f6de;
+      --outline: rgba(11, 18, 16, 0.12);
+      --shadow: 0 26px 60px rgba(8, 22, 16, 0.22);
+      --shadow-soft: 0 12px 26px rgba(8, 22, 16, 0.16);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 20% 10%, #41e097 0%, #24cb7b 45%, #1a7d4e 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.25;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .blob {
+      position: fixed;
+      border-radius: 999px;
+      filter: blur(14px);
+      opacity: 0.7;
+      z-index: 0;
+      pointer-events: none;
+      animation: float 16s ease-in-out infinite;
+    }
+
+    .blob-1 {
+      width: 520px;
+      height: 520px;
+      right: -140px;
+      top: -180px;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    }
+
+    .blob-2 {
+      width: 600px;
+      height: 600px;
+      left: -220px;
+      bottom: -260px;
+      background: radial-gradient(circle at 70% 30%, rgba(4, 96, 55, 0.55), rgba(4, 96, 55, 0));
+      animation-duration: 19s;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 18px;
+      z-index: 5;
+      display: flex;
+      justify-content: center;
+      padding: 0 20px;
+    }
+
+    .header-inner {
+      width: min(1200px, 100%);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 18px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--outline);
+      border-radius: 999px;
+      padding: 10px 18px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(10px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: var(--accent);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-family: "Unbounded", sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .brand-text {
+      display: grid;
+      line-height: 1.1;
+    }
+
+    .brand-name {
+      font-family: "Unbounded", sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-role {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .site-nav {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 6px 8px 12px;
+      background: #f1f5f2;
+      border-radius: 999px;
+      border: 1px solid var(--outline);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .site-nav::-webkit-scrollbar { display: none; }
+
+    .nav-link {
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      transition: color 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav-link.active {
+      color: var(--text);
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .nav-indicator {
+      position: absolute;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--accent);
+      bottom: 6px;
+      left: 0;
+      transform: translateX(0);
+      transition: transform 0.35s ease, width 0.35s ease;
+      z-index: 0;
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 10px 20px rgba(6, 54, 33, 0.2);
+      white-space: nowrap;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px 90px;
+      display: grid;
+      gap: 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    section { scroll-margin-top: 130px; }
+
+    .section-card {
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid var(--outline);
+      border-radius: var(--radius-xl);
+      padding: clamp(26px, 4vw, 52px);
+      box-shadow: var(--shadow);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Unbounded", sans-serif;
+      margin: 0 0 12px;
+      letter-spacing: 0.2px;
+    }
+
+    h1 { font-size: clamp(32px, 4vw, 52px); }
+    h2 { font-size: clamp(26px, 3vw, 36px); }
+    h3 { font-size: 20px; }
+
+    p {
+      margin: 0 0 12px;
+      line-height: 1.7;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 12px 26px rgba(8, 22, 16, 0.2);
+    }
+
+    .btn.ghost {
+      background: #f1f5f2;
+      border-color: var(--outline);
+      color: var(--text);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .hero-stats {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .stat {
+      background: #f1f7f3;
+      border: 1px solid var(--outline);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      display: grid;
+      gap: 4px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .stat-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .stat-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: var(--surface-strong);
+      border: 1px solid var(--outline);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      display: grid;
+      gap: 16px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .profile-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ffffff, #a6f1cf);
+      border: 3px solid #ffffff;
+      display: grid;
+      place-items: center;
+      font-family: "Unbounded", sans-serif;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .profile-name {
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .profile-title {
+      font-size: 14px;
+      margin: 4px 0 0;
+      color: var(--muted);
+    }
+
+    .profile-meta {
+      display: grid;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .profile-meta span { color: var(--text); font-weight: 600; }
+
+    .chip-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      background: var(--accent-soft);
+      color: #0c3f29;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .section-head {
+      display: grid;
+      gap: 6px;
+      margin-bottom: 22px;
+    }
+
+    .resume-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 20px;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--outline);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .focus-list,
+    .skill-list {
+      margin: 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .skills-grid {
+      margin-top: 22px;
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 22px;
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .timeline-item::after {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: 18px;
+      width: 2px;
+      height: calc(100% - 18px);
+      background: rgba(11, 18, 16, 0.15);
+    }
+
+    .timeline-item:last-child::after { display: none; }
+
+    .marquee {
+      margin-top: 18px;
+      background: #f1f7f3;
+      border: 1px solid var(--outline);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .marquee-track {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      width: max-content;
+      animation: marquee 22s linear infinite;
+    }
+
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+
+    .marquee-item {
+      background: #ffffff;
+      border: 1px solid var(--outline);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 20px;
+    }
+
+    .filter-btn {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--outline);
+      background: #f1f7f3;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .filter-btn.is-active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .project-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .project-card {
+      background: var(--surface-strong);
+      border: 1px solid var(--outline);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: grid;
+      gap: 12px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 30px rgba(8, 22, 16, 0.2);
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      background: #f1f7f3;
+      border: 1px solid var(--outline);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .language-grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+
+    .language-card {
+      background: var(--surface-strong);
+      border: 1px solid var(--outline);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: grid;
+      gap: 6px;
+      text-align: center;
+    }
+
+    .language-card span {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .contact-card {
+      background: var(--surface-strong);
+      border: 1px solid var(--outline);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .contact-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .contact-value {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .site-footer {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 12px;
+      padding: 20px 0 40px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 600ms ease, transform 600ms ease;
+      transition-delay: var(--delay, 0ms);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(18px) translateX(-12px); }
+      100% { transform: translateY(0px) translateX(0px); }
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @media (max-width: 980px) {
+      .header-inner {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        border-radius: var(--radius-lg);
+      }
+
+      .site-nav {
+        justify-content: flex-start;
+      }
+
+      .nav-cta {
+        justify-self: start;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding-top: 90px; }
+      .nav-cta { width: 100%; text-align: center; }
+      .header-inner { padding: 14px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home">
+        <span class="brand-mark">HF</span>
+        <span class="brand-text">
+          <span class="brand-name">HALAH FADHIL</span>
+          <span class="brand-role">Electrical and Electronics Engineer</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" id="siteNav" aria-label="Primary">
+        <span class="nav-indicator" id="navIndicator"></span>
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#resume">Resume</a>
+        <a class="nav-link" href="#portfolio">Portfolio</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+
+      <a class="nav-cta" href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main class="page">
+    <section id="home" class="section-card hero">
+      <div class="hero-text reveal">
+        <p class="eyebrow">Portfolio / Systems + IoT</p>
+        <h1>Engineering practical systems across <span>IoT, automation, web, and digital platforms.</span></h1>
+        <p>
+          MSc in Electrical and Electronics Engineering with hands-on experience in smart home automation,
+          IoT-based intelligent irrigation, web systems, and digital marketing analytics.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="./CV.pdf" target="_blank" rel="noopener">Download CV</a>
+          <a class="btn ghost" href="#portfolio">View Projects</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-label">MSc</span>
+            <span class="stat-value">2022 - 2024</span>
+            <span class="stat-note">Necmettin Erbakan University</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">BSc</span>
+            <span class="stat-value">2012 - 2016</span>
+            <span class="stat-note">University of Tikrit</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Focus</span>
+            <span class="stat-value">Embedded and IoT</span>
+            <span class="stat-note">Automation and analytics</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card reveal" style="--delay: 120ms;">
+        <div class="profile-header">
+          <div class="profile-avatar">HF</div>
+          <div>
+            <p class="profile-name">HALAH FADHIL</p>
+            <p class="profile-title">Electrical and Electronics Engineer</p>
+          </div>
+        </div>
+
+        <div class="profile-meta">
+          <div>Location: <span>Kirkuk - Iraq</span></div>
+          <div>Email: <span>halakhfadhil95@gmail.com</span></div>
+          <div>Phone: <span>07764883990</span></div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="mailto:halakhfadhil95@gmail.com">Email</a>
+          <a class="btn ghost" href="tel:+9647764883990">Call</a>
+        </div>
+
+        <div class="chip-group">
+          <span class="chip">Embedded Systems</span>
+          <span class="chip">IoT Automation</span>
+          <span class="chip">Web Systems</span>
+          <span class="chip">Digital Analytics</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="section-card reveal">
+      <div class="section-head">
+        <p class="eyebrow">Resume</p>
+        <h2>Education, experience, and core strengths</h2>
+        <p>Focused on building reliable systems that connect hardware, software, and data-driven decisions.</p>
+      </div>
+
+      <div class="resume-grid">
+        <div class="panel">
+          <h3>About</h3>
+          <p>
+            MSc in Electrical and Electronics Engineering (Necmettin Erbakan University, Turkey, 2022-2024) and
+            BSc in Electrical and Electronics Engineering (University of Tikrit, Iraq, 2012-2016). My work spans
+            embedded systems, IoT automation, web systems, and digital marketing platforms.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h3>Focus Areas</h3>
+          <ul class="focus-list">
+            <li>Embedded systems, sensors, and data acquisition</li>
+            <li>Automation logic and energy efficiency optimization</li>
+            <li>Web systems, platform operations, and digital analytics</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="panel">
+          <h4>Electrical and Automation</h4>
+          <ul class="skill-list">
+            <li>System design and implementation</li>
+            <li>Energy efficiency analysis and optimization</li>
+            <li>Automated control concepts</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h4>Embedded Systems and IoT</h4>
+          <ul class="skill-list">
+            <li>ESP32 and Raspberry Pi platforms</li>
+            <li>Sensor integration and data acquisition</li>
+            <li>Smart home and intelligent irrigation systems</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h4>IT, Web, and Systems</h4>
+          <ul class="skill-list">
+            <li>Website and digital platform management</li>
+            <li>Tools integration with technical systems</li>
+            <li>Backup, continuity, and reliability</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h4>Digital and Business Systems</h4>
+          <ul class="skill-list">
+            <li>Digital marketing strategy execution</li>
+            <li>SEO fundamentals and campaign optimization</li>
+            <li>Traffic, behavior, and conversion analysis</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="resume-grid" style="margin-top: 20px;">
+        <div class="panel">
+          <h3>Education</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <strong>MSc in Electrical and Electronics Engineering</strong>
+              <span>Necmettin Erbakan University - Turkey (2022-2024)</span>
+            </div>
+            <div class="timeline-item">
+              <strong>BSc in Electrical and Electronics Engineering</strong>
+              <span>University of Tikrit - Iraq (2012-2016)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Experience Timeline</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <strong>2024 - Today | Digital Marketing and Web Systems</strong>
+              <span>Strategy execution, platform management, SEO, analytics, tool integration</span>
+            </div>
+            <div class="timeline-item">
+              <strong>2022 - 2024 | Academic and Industrial Projects</strong>
+              <span>Smart home automation, IoT irrigation, sensor integration, energy optimization</span>
+            </div>
+            <div class="timeline-item">
+              <strong>2020 - 2022 | System and Software Administrator</strong>
+              <span>Elimkon - Electronik | Accounting software administration, access control, backup</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="marquee" aria-label="Core tools">
+        <div class="marquee-track">
+          <span class="marquee-item">ESP32</span>
+          <span class="marquee-item">Raspberry Pi</span>
+          <span class="marquee-item">Sensor Integration</span>
+          <span class="marquee-item">Automation Logic</span>
+          <span class="marquee-item">SEO</span>
+          <span class="marquee-item">Analytics</span>
+          <span class="marquee-item">Web Systems</span>
+          <span class="marquee-item">Data Acquisition</span>
+          <span class="marquee-item">Energy Efficiency</span>
+          <span class="marquee-item">Platform Ops</span>
+          <span class="marquee-item">ESP32</span>
+          <span class="marquee-item">Raspberry Pi</span>
+          <span class="marquee-item">Sensor Integration</span>
+          <span class="marquee-item">Automation Logic</span>
+          <span class="marquee-item">SEO</span>
+          <span class="marquee-item">Analytics</span>
+          <span class="marquee-item">Web Systems</span>
+          <span class="marquee-item">Data Acquisition</span>
+          <span class="marquee-item">Energy Efficiency</span>
+          <span class="marquee-item">Platform Ops</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section-card reveal">
+      <div class="section-head">
+        <p class="eyebrow">Portfolio</p>
+        <h2>Selected projects and applied systems</h2>
+        <p>Representative work across IoT automation, digital systems, and operational platforms.</p>
+      </div>
+
+      <div class="filters" role="tablist" aria-label="Project filter">
+        <button class="filter-btn is-active" data-filter="all" type="button">All</button>
+        <button class="filter-btn" data-filter="iot" type="button">IoT</button>
+        <button class="filter-btn" data-filter="digital" type="button">Digital</button>
+        <button class="filter-btn" data-filter="systems" type="button">Systems</button>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card" data-category="iot">
+          <div class="project-meta">
+            <span>IoT</span>
+            <span>Smart Home</span>
+          </div>
+          <h3>Smart Home Automation System</h3>
+          <p>Designed and implemented smart home automation workflows with sensor integration and control logic.</p>
+          <div class="project-tags">
+            <span class="tag">ESP32</span>
+            <span class="tag">Sensors</span>
+            <span class="tag">Automation</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="iot">
+          <div class="project-meta">
+            <span>IoT</span>
+            <span>Irrigation</span>
+          </div>
+          <h3>Intelligent Irrigation System</h3>
+          <p>IoT-based irrigation solution with data acquisition, automated control, and energy analysis.</p>
+          <div class="project-tags">
+            <span class="tag">Raspberry Pi</span>
+            <span class="tag">Energy</span>
+            <span class="tag">Automation</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="digital">
+          <div class="project-meta">
+            <span>Digital</span>
+            <span>Web Systems</span>
+          </div>
+          <h3>Digital Marketing and Web Systems</h3>
+          <p>Executed strategy, managed platforms, optimized campaigns with SEO fundamentals and analytics.</p>
+          <div class="project-tags">
+            <span class="tag">SEO</span>
+            <span class="tag">Analytics</span>
+            <span class="tag">Platforms</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="systems">
+          <div class="project-meta">
+            <span>Systems</span>
+            <span>Administration</span>
+          </div>
+          <h3>Corporate Accounting Systems Administration</h3>
+          <p>Administered accounting systems with access control, backups, data integrity, and reporting support.</p>
+          <div class="project-tags">
+            <span class="tag">Access Control</span>
+            <span class="tag">Backups</span>
+            <span class="tag">Reliability</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-card reveal">
+      <div class="section-head">
+        <p class="eyebrow">Languages</p>
+        <h2>Communication profile</h2>
+      </div>
+      <div class="language-grid">
+        <div class="language-card">
+          <span>German</span>
+          <strong>B1</strong>
+        </div>
+        <div class="language-card">
+          <span>English</span>
+          <strong>C1</strong>
+        </div>
+        <div class="language-card">
+          <span>Kurdish</span>
+          <strong>C1</strong>
+        </div>
+        <div class="language-card">
+          <span>Turkish</span>
+          <strong>C2</strong>
+        </div>
+        <div class="language-card">
+          <span>Arabic</span>
+          <strong>Mother Language</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-card reveal">
+      <div class="section-head">
+        <p class="eyebrow">Contact</p>
+        <h2>Open for collaboration and new opportunities</h2>
+        <p>Reach out for projects, research, or technical partnerships.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">halakhfadhil95@gmail.com</span>
+          <a class="btn ghost" href="mailto:halakhfadhil95@gmail.com">Send Email</a>
+        </div>
+        <div class="contact-card">
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">07764883990</span>
+          <a class="btn ghost" href="tel:+9647764883990">Call Now</a>
+        </div>
+        <div class="contact-card">
+          <span class="contact-label">Location</span>
+          <span class="contact-value">Kirkuk - Iraq</span>
+          <a class="btn ghost" href="#portfolio">View Work</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">2025 HALAH FADHIL | Portfolio</footer>
+
+  <script>
+    const nav = document.getElementById("siteNav");
+    const indicator = document.getElementById("navIndicator");
+    const navLinks = Array.from(nav.querySelectorAll(".nav-link"));
+    const sections = Array.from(document.querySelectorAll("main section[id]"));
+
+    const updateIndicator = (link) => {
+      if (!link) return;
+      indicator.style.width = `${link.offsetWidth}px`;
+      indicator.style.transform = `translateX(${link.offsetLeft}px)`;
+    };
+
+    const setActiveLink = () => {
+      const offset = 160;
+      let current = sections[0]?.id || "";
+      sections.forEach((section) => {
+        const top = section.offsetTop - offset;
+        if (window.scrollY >= top) current = section.id;
+      });
+
+      navLinks.forEach((link) => {
+        const isActive = link.getAttribute("href") === `#${current}`;
+        link.classList.toggle("active", isActive);
+        if (isActive) updateIndicator(link);
+      });
+    };
+
+    window.addEventListener("scroll", setActiveLink, { passive: true });
+    window.addEventListener("resize", () => {
+      const active = nav.querySelector(".nav-link.active");
+      updateIndicator(active);
+    });
+    window.addEventListener("load", () => {
+      setActiveLink();
+      const active = nav.querySelector(".nav-link.active");
+      updateIndicator(active);
+    });
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project-card");
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        filterButtons.forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+        const filter = btn.dataset.filter;
+        projectCards.forEach((card) => {
+          const match = filter === "all" || card.dataset.category === filter;
+          card.style.display = match ? "grid" : "none";
+        });
+      });
+    });
+
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    }
+  </script>
+</body>
+</html>
